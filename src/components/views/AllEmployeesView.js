@@ -3,7 +3,13 @@ import { Link } from "react-router-dom";
 
 const AllEmployeesView = (props) => {
     if (!props.allEmployees.length) {
-        return <div>There are no employees.</div>;
+        return (
+            <div>There are no employees.
+            <Link to = {`/`}>
+            <h5>Back</h5>
+            </Link>
+            </div>
+        );
     }
     return (
         <div>
@@ -12,12 +18,15 @@ const AllEmployeesView = (props) => {
             return (
                 <div key={employee.id}>
                 <Link to={`/employees/${employee.id}`}>
-                <h1>{name}</h1>
+                <h2>{name}</h2>
                 </Link>
                 <p>{employee.department}</p>
                 </div>
             );
         })}
+        <Link to = {`/`}>
+        <h5>Back</h5>
+        </Link>
         </div>
     );
 };
