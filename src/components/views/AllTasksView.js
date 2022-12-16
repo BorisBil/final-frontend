@@ -6,6 +6,9 @@ const AllTasksView = (props) => {
         return (
         <div>
             <p>There are no tasks.</p>
+            <Link to = {`/`}>
+            <h5>Back</h5>
+            </Link>
         </div>
         );
     }
@@ -16,12 +19,15 @@ const AllTasksView = (props) => {
             return (
                 <div key = {task.id}>
                     <Link to = {`/task/${task.id}`}>
-                    <h1>{name}</h1>
+                    <h2>{name}</h2>
                     </Link>
                 </div>
             );
         }
         )}
+        <Link to = {`/`}>
+        <h5>Back</h5>
+        </Link>
         </div>
     );
 };
