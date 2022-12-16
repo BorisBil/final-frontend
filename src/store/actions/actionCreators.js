@@ -28,3 +28,19 @@ export const fetchTask = (task) => {
         payload: task,
     };
 };
+
+/** All Employees */
+export const fetchAllEmployees = (employees) => {
+    return {
+        type: at.FETCH_ALL_EMPLOYEES,
+        payload: employees,
+    };
+};
+  
+/** Single Employee */
+export const fetchEmployee = (employee) => {
+    return {
+        type: at.FETCH_EMPLOYEE,
+        payload: employee,
+    };
+};

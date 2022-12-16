@@ -1,26 +1,29 @@
 import "./App.css";
 
 //Router
-import { Routes, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 //Components
 import {
   HomePageContainer,
   TaskContainer,
   AllTasksContainer,
-  EditTaskContainer
+  EditTaskContainer,
+  EmployeeContainer,
+  AllEmployeesContainer
 } from './components/containers';
 
 const App = () => {
   return (
     <div className="App">
-      <Routes>
-        <Route exact path="/" element = {<HomePageContainer/>} />
-        <Route exact path="/tasks" element = {<AllTasksContainer/>} />
-        <Route exact path="/task/:id" element = {<TaskContainer/>} />
-        <Route exact path="/edittask/:id" element = {<EditTaskContainer/>} />
-
-      </Routes>        
+      <Switch>
+        <Route exact path="/" component = {HomePageContainer} />
+        <Route exact path="/tasks" component = {AllTasksContainer} />
+        <Route exact path="/task/:id" component = {TaskContainer} />
+        <Route exact path="/edittask/:id" component = {EditTaskContainer} />
+        <Route exact path="/employees" component = {AllEmployeesContainer} />
+        <Route exact path="/employees/:id" component = {EmployeeContainer} />
+      </Switch>        
     </div>
   );
 }

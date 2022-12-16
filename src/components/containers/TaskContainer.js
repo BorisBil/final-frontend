@@ -7,7 +7,7 @@ class TaskContainer extends Component {
     componentDidMount() {
         
         // Getting task ID from url
-        this.props.fetchTask(this.props.id);
+        this.props.fetchTask(this.props.match.params.id);
     }
 
     render() {

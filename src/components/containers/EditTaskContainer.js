@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 import { fetchTaskThunk, editTaskThunk } from '../../store/thunks';
 
@@ -57,21 +57,25 @@ class EditTaskContainer extends Component {
     render() {
         // Go to single task view of the edited task
         if(this.state.redirect) {
-            return (<Navigate to={`/task/${this.state.redirectId}`}/>)
+            return (<Redirect to={`/task/${this.state.redirectId}`}/>)
         }
 
         return (
             <form style={{textAlign: 'center'}} onSubmit={(e) => this.handleSubmit(e)}>
-            <label style= {{color:'#11153e', fontWeight: 'bold'}}>Title: </label>
-            <input type="text" name="title" value={this.state.title} onChange ={(e) => this.handleChange(e)}/>
+            <label style= {{color:'#11153e', fontWeight: 'bold'}}>Name: </label>
+            <input type="text" name="name" value={this.state.name} onChange ={(e) => this.handleChange(e)}/>
             <br/>
 
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Timeslot: </label>
-            <input type="text" name="timeslot" value={this.state.timeslot} onChange={(e) => this.handleChange(e)}/>
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Priority: </label>
+            <input type="text" name="priority" value={this.state.priority} onChange={(e) => this.handleChange(e)}/>
             <br/>
   
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>instructorId: </label>
-            <input type="text" name="instructorId" value={this.state.instructorId} onChange={(e) => this.handleChange(e)} />
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Employee Id: </label>
+            <input type="integer" name="employeeId" value={this.state.employeeId} onChange={(e) => this.handleChange(e)} />
+            <br/>
+
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Description: </label>
+            <input type="text" name="description" value={this.state.description} onChange={(e) => this.handleChange(e)} />
             <br/>
   
             <button type="submit">
