@@ -2,17 +2,17 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-import NewTaskView from '../views/NewTaskView';
-import { addTaskThunk } from '../../store/thunks';
+import NewEmployeeView from '../views/NewEmployeeView';
+import { addEmployeeThunk } from '../../store/thunks';
 
 
-class NewTaskContainer extends Component {
+class NewEmployeeContainer extends Component {
     constructor(props){
         super(props);
         this.state = {
-            name: "", 
-            description: "",
-            priority: "", 
+            firstname: "", 
+            lastname: "",
+            department: "", 
             employeeID: null, 
             redirect: false, 
             redirectId: null,
@@ -32,18 +32,17 @@ class NewTaskContainer extends Component {
             this.setState({error: "Name field is required"});
             return;
         }
-        let task = {
-            name: this.state.name,
-            description: this.state.description,
-            priority: this.state.priority,
-            employeeId: this.state.employeeId
+        let employee = {
+            firstname: this.state.firstname,
+            lastname: this.state.lastname,
+            department: this.state.department
         };
         
-        let newTask = await this.props.addTask(task);
+        let newEmployee = await this.props.addEmployee(employee);
 
         this.setState({
             redirect: true, 
-            redirectId: newTask.id,
+            redirectId: newEmployee.id,
             error: ""
         });
     }
@@ -54,10 +53,10 @@ class NewTaskContainer extends Component {
 
     render() {
         if(this.state.redirect) {
-            return (<Redirect to = {`/tasks/${this.state.redirectId}`}/>)
+            return (<Redirect to = {`/employees/${this.state.redirectId}`}/>)
         }
         return (
-            <NewTaskView 
+            <NewEmployeeView 
                 handleChange = {this.handleChange} 
                 handleSubmit = {this.handleSubmit}
                 error = {this.state.error}      
@@ -68,8 +67,8 @@ class NewTaskContainer extends Component {
 
 const mapDispatch = (dispatch) => {
     return({
-        addTask: (task) => dispatch(addTaskThunk(task)),
+        addEmployee: (employee) => dispatch(addEmployeeThunk(employee)),
     })
 }
 
-export default connect(null, mapDispatch)(NewTaskContainer);
+export default connect(null, mapDispatch)(NewEmployeeContainer);
