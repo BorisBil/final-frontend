@@ -44,3 +44,19 @@ export const fetchEmployee = (employee) => {
         payload: employee,
     };
 };
+
+/** Add Task */
+export const addTask = (task) => {
+    return {
+        type: at.ADD_TASK,
+        payload: task,
+    };
+};
+  
+/** Delete Task */
+export const deleteTask = (taskId) => {
+    return {
+        type: at.DELETE_TASK,
+        payload: taskId,
+    };
+};

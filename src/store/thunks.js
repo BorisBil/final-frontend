@@ -36,6 +36,27 @@ export const fetchTaskThunk = id => async (dispatch) => {
     }
 };
 
+/** Add Task */
+export const addTaskThunk = (task) => async (dispatch) => {
+    try {
+        let res = await axios.post(`${path}/tasks`, task);
+        dispatch(ac.addTask(res.data));
+        return res.data;
+    } catch(err) {
+        console.error(err);
+    }
+};
+  
+/** Delete Task */
+export const deleteTaskThunk = taskId => async dispatch => {
+    try {
+        await axios.delete(`${path}/tasks/${taskId}`);
+        dispatch(ac.deleteTask(taskId));
+    } catch(err) {
+        console.error(err);
+    }
+};
+
 /** All Employees */
 export const fetchAllEmployeesThunk = () => async (dispatch) => {
     try {

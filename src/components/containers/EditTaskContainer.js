@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
@@ -81,6 +82,10 @@ class EditTaskContainer extends Component {
             <button type="submit">
               Submit
             </button>
+            
+            <Link to = {`/tasks`}>
+            <h5>Back</h5>
+            </Link>
 
           </form>
         )
