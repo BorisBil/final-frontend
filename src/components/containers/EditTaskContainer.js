@@ -11,6 +11,7 @@ class EditTaskContainer extends Component {
         this.state = {
             name: "", 
             description: "",
+            priority: "",
             employeeId: null, 
             redirect: false, 
             redirectId: null
@@ -23,6 +24,7 @@ class EditTaskContainer extends Component {
         this.setState({
             name: this.props.task.name, 
             description: this.props.task.description,
+            priority: this.props.task.priority,
             employeeId: this.props.task.employeeId
         });
     }
@@ -40,6 +42,7 @@ class EditTaskContainer extends Component {
             id: this.props.task.id,
             name: this.state.name,
             description: this.state.description,
+            priority: this.state.priority,
             employeeId: this.state.employeeId
         };
         
@@ -67,6 +70,10 @@ class EditTaskContainer extends Component {
             <input type="text" name="name" value={this.state.name} onChange ={(e) => this.handleChange(e)}/>
             <br/>
 
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Description: </label>
+            <input type="text" name="description" value={this.state.description} onChange={(e) => this.handleChange(e)} />
+            <br/>
+
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Priority: </label>
             <input type="text" name="priority" value={this.state.priority} onChange={(e) => this.handleChange(e)}/>
             <br/>
@@ -75,10 +82,6 @@ class EditTaskContainer extends Component {
             <input type="integer" name="employeeId" value={this.state.employeeId} onChange={(e) => this.handleChange(e)} />
             <br/>
 
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Description: </label>
-            <input type="text" name="description" value={this.state.description} onChange={(e) => this.handleChange(e)} />
-            <br/>
-  
             <button type="submit">
                 Submit
             </button>

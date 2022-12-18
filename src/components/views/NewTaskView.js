@@ -8,7 +8,7 @@ const NewTaskView = (props) => {
             <div className="formContainer">
                 <div className="formTitle">
                     <h2 style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
-                    New Task
+                        New Task
                     </h2>
                 </div>
                 <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
@@ -28,7 +28,7 @@ const NewTaskView = (props) => {
                     <br/>
   
                     <button type="submit">
-                    Submit
+                        Submit
                     </button>
                     <br/>
                     <br/>
