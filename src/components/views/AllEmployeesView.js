@@ -19,11 +19,34 @@ const AllEmployeesView = (props) => {
             let name = employee.firstname + " " + employee.lastname;
             return (
                 <div key={employee.id}>
-                    <Link to={`/employees/${employee.id}`}>
-                        <h2>{name}</h2>
-                    </Link>
-                    <p>{employee.department}</p>
-                    <button onClick={() => deleteEmployee(employee.id)}>Delete</button>
+                    <table style = {{   border: "1px solid black",
+                                        padding: "10px",
+                                        margin: "auto",
+                                        borderSpacing: "30px",
+                                        borderCollapse: "collapse"
+                    }}>
+                        <tr>
+                            <td style = {{  border: "1px solid black",
+                                            padding: "10px",
+                                            margin: "auto",
+                                            borderSpacing: "30px",
+                                            borderCollapse: "collapse"
+                                        }}>
+                            <Link to={`/employees/${employee.id}`}>
+                                <h3>{name}</h3>
+                            </Link>
+                            </td>
+                            <td style = {{  border: "1px solid black",
+                                            padding: "10px",
+                                            margin: "auto",
+                                            borderSpacing: "30px",
+                                            borderCollapse: "collapse"
+                                        }}>
+                                {employee.department}
+                            </td>
+                        </tr>
+                    </table>
+                    <button style = {{margin: "15px"}} onClick={() => deleteEmployee(employee.id)}>Delete</button>
                 </div>
             );
         })}
