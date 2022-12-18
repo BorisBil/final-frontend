@@ -21,8 +21,8 @@ class EditEmployeeContainer extends Component {
     componentDidMount() {
         this.props.fetchEmployee(this.props.match.params.id);
         this.setState({
-            firstname: this.props.employee.name, 
-            lastname: this.props.employee.description,
+            firstname: this.props.employee.firstname, 
+            lastname: this.props.employee.lastname,
             department: this.props.employee.department
         });
     }
@@ -62,11 +62,11 @@ class EditEmployeeContainer extends Component {
         return (
             <form style={{textAlign: 'center'}} onSubmit={(e) => this.handleSubmit(e)}>
             <label style= {{color:'#11153e', fontWeight: 'bold'}}>First Name: </label>
-            <input type="text" name="firstname" value={this.state.name} onChange ={(e) => this.handleChange(e)}/>
+            <input type="text" name="firstname" value={this.state.firstname} onChange ={(e) => this.handleChange(e)}/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Last Name: </label>
-            <input type="text" name="lastname" value={this.state.priority} onChange={(e) => this.handleChange(e)}/>
+            <input type="text" name="lastname" value={this.state.lastname} onChange={(e) => this.handleChange(e)}/>
             <br/>
   
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Department: </label>

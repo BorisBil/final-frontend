@@ -8,7 +8,7 @@ const NewEmployeeView = (props) => {
             <div className="formContainer">
                 <div className="formTitle">
                     <h2 style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
-                    New Employee
+                        New Employee
                     </h2>
                 </div>
                 <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
@@ -22,8 +22,8 @@ const NewEmployeeView = (props) => {
                     <br/>
                     <br/>
 
-                    <label style={{color:'#11153e', fontWeight: 'bold'}}>Description: </label>
-                    <input type="text" name="description" onChange={(e) => handleChange(e)} />
+                    <label style={{color:'#11153e', fontWeight: 'bold'}}>Department: </label>
+                    <input type="text" name="department" onChange={(e) => handleChange(e)} />
                     <br/>
                     <br/>
   
