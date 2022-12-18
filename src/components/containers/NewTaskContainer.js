@@ -54,7 +54,7 @@ class NewTaskContainer extends Component {
 
     render() {
         if(this.state.redirect) {
-            return (<Redirect to = {`/task/${this.state.redirectId}`}/>)
+            return (<Redirect to = {`/tasks/${this.state.redirectId}`}/>)
         }
         return (
             <NewTaskView 

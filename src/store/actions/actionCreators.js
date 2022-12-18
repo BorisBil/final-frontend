@@ -60,3 +60,19 @@ export const deleteTask = (taskId) => {
         payload: taskId,
     };
 };
+
+/** Edit Employee */
+export const editEmployee = (employee) => {
+    return {
+        type: at.EDIT_EMPLOYEE,
+        payload: employee,
+    };
+};
+
+/** Add Employee */
+export const addEmployee = (employee) => {
+    return {
+        type: at.ADD_EMPLOYEE,
+        payload: employee,
+    };
+};

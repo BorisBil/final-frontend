@@ -27,19 +27,14 @@ const NewTaskView = (props) => {
                     <br/>
                     <br/>
   
-                    <label style={{color:'#11153e', fontWeight: 'bold'}}>employeeId: </label>
-                    <input type="text" name="employeeId" onChange={(e) => handleChange(e)} />
-                    <br/>
-                    <br/>
-  
                     <button type="submit">
                     Submit
                     </button>
                     <br/>
                     <br/>
                 </form>
-            <Link to = {`/`}>
-            <h5>Back</h5>
+            <Link to = {`/tasks`}>
+                <h5>Back</h5>
             </Link>
             {error !== "" && <p>{error}</p>}
             </div>
