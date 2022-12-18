@@ -14,6 +14,7 @@ const AllEmployeesView = (props) => {
     }
     return (
         <div>
+            <h1>All Employees View</h1>
             {props.allEmployees.map((employee) => {
             let name = employee.firstname + " " + employee.lastname;
             return (
@@ -27,7 +28,7 @@ const AllEmployeesView = (props) => {
             );
         })}
         <Link to={`/newemployee`}>
-            <button>Add New Employee</button>
+            <button style = {{margin: "5px"}}>Add New Employee</button>
         </Link>
         <Link to = {`/`}>
             <h5>Back</h5>

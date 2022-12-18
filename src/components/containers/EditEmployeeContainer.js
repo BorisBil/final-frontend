@@ -35,6 +35,12 @@ class EditEmployeeContainer extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
+        event.preventDefault();
+        if (this.state.lastname === "") {
+          this.setState({error: "Error: Last name cannot be empty"});
+          return;
+        }
+        
         let employee = {
             id: this.props.employee.id,
             firstname: this.state.firstname,
