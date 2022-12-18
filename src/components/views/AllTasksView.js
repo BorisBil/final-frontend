@@ -17,13 +17,47 @@ const AllTasksView = (props) => {
     }
     return (
         <div>
+            <h1>All Tasks View</h1>
             {tasks.map((task) => {
                 let name = task.name;
             return (
                 <div key = {task.id}>
-                    <Link to = {`/tasks/${task.id}`}>
-                        <h2>{name}</h2>
-                    </Link>
+                    <table style = {{border: "1px solid black",
+                        padding: "10px",
+                        margin: "auto",
+                        borderSpacing: "30px",
+                        borderCollapse: "collapse"
+                    }}>
+                        <tr>
+                        <td style = {{  border: "1px solid black",
+                                        padding: "10px",
+                                        margin: "auto",
+                                        borderSpacing: "30px",
+                                        borderCollapse: "collapse"
+                                    }}>
+                            <Link to = {`/tasks/${task.id}`}>
+                                <h3>{name}</h3>
+                            </Link>
+                            </td>
+                            <td style = {{  border: "1px solid black",
+                                            padding: "10px",
+                                            margin: "auto",
+                                            borderSpacing: "30px",
+                                            borderCollapse: "collapse"
+                                        }}>
+                                {task.priority}
+                            </td>
+                            <td style = {{  border: "1px solid black",
+                                            padding: "10px",
+                                            margin: "auto",
+                                            borderSpacing: "30px",
+                                            borderCollapse: "collapse"
+                                        }}>
+                                {task.completion}
+                            </td>
+                        </tr>
+                    </table>
+                    
                     <button onClick={() => deleteTask(task.id)}>Delete</button>
                 </div>
             );
