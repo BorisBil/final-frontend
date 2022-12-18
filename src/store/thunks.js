@@ -76,3 +76,24 @@ export const fetchAllEmployeesThunk = () => async (dispatch) => {
         console.error(err);
     }
 };
+
+/** Edit Employee */
+export const editEmployeeThunk = employee => async (dispatch) => {
+    try {
+        let res = await axios.put(`${path}/employees/${employee.id}`, employee);
+        dispatch(ac.editEmployee(res.data));
+    } catch(err) {
+        console.error(err);
+    }
+};
+
+/** Add Employee */
+export const addEmployeeThunk = (employee) => async (dispatch) => {
+    try {
+        let res = await axios.post(`${path}/employees`, employee);
+        dispatch(ac.addEmployee(res.data));
+        return res.data;
+    } catch(err) {
+        console.error(err);
+    }
+};

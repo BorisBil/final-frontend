@@ -23,7 +23,7 @@ class EditTaskContainer extends Component {
         this.setState({
             name: this.props.task.name, 
             description: this.props.task.description,
-            employeeId: this.props.task.employeeId, 
+            employeeId: this.props.task.employeeId
         });
     }
 
@@ -58,7 +58,7 @@ class EditTaskContainer extends Component {
     render() {
         // Go to single task view of the edited task
         if(this.state.redirect) {
-            return (<Redirect to={`/task/${this.state.redirectId}`}/>)
+            return (<Redirect to={`/tasks/${this.state.redirectId}`}/>)
         }
 
         return (
@@ -80,11 +80,11 @@ class EditTaskContainer extends Component {
             <br/>
   
             <button type="submit">
-              Submit
+                Submit
             </button>
             
             <Link to = {`/tasks`}>
-            <h5>Back</h5>
+                <h5>Back</h5>
             </Link>
 
           </form>
