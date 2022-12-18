@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const AllEmployeesView = (props) => {
+    let {deleteEmployee} = props;
     if (!props.allEmployees.length) {
         return (
             <div>There are no employees.
@@ -21,6 +22,7 @@ const AllEmployeesView = (props) => {
                         <h2>{name}</h2>
                     </Link>
                     <p>{employee.department}</p>
+                    <button onClick={() => deleteEmployee(employee.id)}>Delete</button>
                 </div>
             );
         })}
