@@ -5,4 +5,3 @@ export { default as NewTaskView } from "./NewTaskView";
 export { default as HomePageView } from "./HomePageView";
 export { default as EmployeeView } from "./EmployeeView";
 export { default as AllEmployeesView } from "./AllEmployeesView";
-export { default as NewEmployeeView } from "./NewEmployeeView";
