@@ -26,3 +26,6 @@ export const EDIT_EMPLOYEE = "EDIT_EMPLOYEE";
 
 // Add Employee
 export const ADD_EMPLOYEE = "ADD_EMPLOYEE";
+
+// Delete Employee
+export const DELETE_EMPLOYEE = "DELETE_EMPLOYEE";

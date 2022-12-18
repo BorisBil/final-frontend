@@ -97,3 +97,13 @@ export const addEmployeeThunk = (employee) => async (dispatch) => {
         console.error(err);
     }
 };
+
+/** Delete Employee */
+export const deleteEmployeeThunk = employeeId => async dispatch => {
+    try {
+        await axios.delete(`${path}/employees/${employeeId}`);
+        dispatch(ac.deleteEmployee(employeeId));
+    } catch(err) {
+        console.error(err);
+    }
+};

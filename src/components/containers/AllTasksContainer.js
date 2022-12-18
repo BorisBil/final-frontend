@@ -16,7 +16,7 @@ class AllTasksContainer extends Component {
             <div>
                 <AllTasksView 
                     tasks = {this.props.allTasks}  
-                    deleteTask={this.props.deleteTask}   
+                    deleteTask = {this.props.deleteTask}   
                 />
             </div>
         )
