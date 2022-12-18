@@ -29,12 +29,12 @@ const AllTasksView = (props) => {
                         borderCollapse: "collapse"
                     }}>
                         <tr>
-                        <td style = {{  border: "1px solid black",
-                                        padding: "10px",
-                                        margin: "auto",
-                                        borderSpacing: "30px",
-                                        borderCollapse: "collapse"
-                                    }}>
+                            <td style = {{  border: "1px solid black",
+                                            padding: "10px",
+                                            margin: "auto",
+                                            borderSpacing: "30px",
+                                            borderCollapse: "collapse"
+                                        }}>
                             <Link to = {`/tasks/${task.id}`}>
                                 <h3>{name}</h3>
                             </Link>
@@ -58,13 +58,13 @@ const AllTasksView = (props) => {
                         </tr>
                     </table>
                     
-                    <button onClick={() => deleteTask(task.id)}>Delete</button>
+                    <button style = {{margin: "10px"}} onClick={() => deleteTask(task.id)}>Delete</button>
                 </div>
             );
         }
         )}
         <Link to={`/newtask`}>
-            <button>Add New Task</button>
+            <button style = {{margin: "5px"}}>Add New Task</button>
         </Link>
         <Link to = {`/`}>
             <h5>Back</h5>
