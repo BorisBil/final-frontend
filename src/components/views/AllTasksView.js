@@ -30,6 +30,32 @@ const AllTasksView = (props) => {
                     }}>
                         <tr>
                             <td style = {{  border: "1px solid black",
+                                            padding: "1px",
+                                            margin: "auto",
+                                            borderSpacing: "2px",
+                                            borderCollapse: "collapse"
+                                        }}>
+                                <h3>Task</h3>
+                            </td>
+                            <td style = {{  border: "1px solid black",
+                                            padding: "1px",
+                                            margin: "auto",
+                                            borderSpacing: "2px",
+                                            borderCollapse: "collapse"
+                                        }}>
+                                <h3>Priority</h3>
+                            </td>
+                            <td style = {{  border: "1px solid black",
+                                            padding: "3px",
+                                            margin: "auto",
+                                            borderSpacing: "5px",
+                                            borderCollapse: "collapse"
+                                        }}>
+                                <h3>Completion</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style = {{  border: "1px solid black",
                                             padding: "10px",
                                             margin: "auto",
                                             borderSpacing: "30px",
