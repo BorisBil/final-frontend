@@ -13,6 +13,7 @@ class NewTaskContainer extends Component {
             name: "", 
             description: "",
             priority: "", 
+            completion: "", 
             employeeID: null, 
             redirect: false, 
             redirectId: null,
@@ -36,6 +37,7 @@ class NewTaskContainer extends Component {
             name: this.state.name,
             description: this.state.description,
             priority: this.state.priority,
+            completion: this.state.completion,
             employeeId: this.state.employeeId
         };
         
